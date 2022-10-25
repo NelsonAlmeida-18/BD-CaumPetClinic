@@ -1,4 +1,5 @@
 CREATE SCHEMA IF NOT EXISTS `CAUM_PETCLINIC`;
+-- DROP TABLE `CAUM_PETCLINIC`.`Clinicas`
 
 CREATE TABLE IF NOT EXISTS `CAUM_PETCLINIC`.`Boletins`(
 	`idBoletim` INT UNIQUE NOT NULL,
@@ -29,7 +30,9 @@ CREATE TABLE IF NOT EXISTS `CAUM_PETCLINIC`.`Colaboradores`(
     `nome` VARCHAR(150) NOT NULL,
     `cargo` INT NOT NULL,
     `contacto` INT NOT NULL UNIQUE,
-    PRIMARY KEY(`idColaborador`)
+    `idClinica` INT NOT NULL UNIQUE,
+    PRIMARY KEY(`idColaborador`),
+    FOREIGN KEY(`idClinica`) REFERENCES `CAUM_PETCLINIC`.`Clinicas`(`idClinica`)
 );
 
 CREATE TABLE IF NOT EXISTS `CAUM_PETCLINIC`.`Animais`(
@@ -45,9 +48,9 @@ CREATE TABLE IF NOT EXISTS `CAUM_PETCLINIC`.`Clientes`(
 );
 
 CREATE TABLE IF NOT EXISTS `CAUM_PETCLINIC`.`Clinicas`(
-	`id`INT NOT NULL UNIQUE,
+	`idClinica`INT NOT NULL UNIQUE,
     `administrador` INT NOT NULL UNIQUE,
-    PRIMARY KEY(`id`)
+    PRIMARY KEY(`idClinica`)
 );
 
-SELECT * FROM `CAUM_PETCLINIC`.`Boletim`
+SELECT * FROM `CAUM_PETCLINIC`.`Colaboradores`
