@@ -1,5 +1,4 @@
 #criar clinicas
-
 insert into CaumPetClinic.Morada (idMorada,codPostal, rua, localidade, porta, piso)
 values(0,"4710-167", "Rua Soldado Manuel Pinheiro", "Adaúfe", "7", null);
 insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso)
@@ -22,8 +21,90 @@ values(1, 1, 1);
 insert into CaumPetClinic.Clinica (idClinica, Morada_idMorada, Contacto_idContacto)
 values(2, 2, 2);
 
+#adicionar servicos
+#servicos clinica 0
+Select * from CaumPetClinic.Servico;
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(0, "Desparasitação externa", "Banho e aplicação de uma ampôla desparasitante(pulgas e carraças)", 15, 10, 0);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(1, "Desparasitação interna", "Banho e vacinação contra pulgas e carraças", 25, 12, 0);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(2, "Banho e brushing", "Banho completo e brushing", 15, 7, 0);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(3, "Consulta de clínica geral", "Consulta de medicina veterinária geral",35, 25, 0);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(4, "Esterilização", "Esterilização", 150, 100, 0);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(5, "Análises Clínicas", "Análises clínicas básicas(Recolha de sangue, inspeção visual)", 30, 25, 0);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(6, "Hotel", "Permanência no hotel com supervisionamento dos nossos profissionais e acompanhamento dos nossos profissionais", 20, 7, 0);
+#servico clinica 1
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(0, "Desparasitação externa", "Banho e aplicação de uma ampôla desparasitante(pulgas e carraças)", 15, 10, 1);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(1, "Desparasitação interna", "Banho e vacinação contra pulgas e carraças", 25, 12, 1);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(2, "Banho e brushing", "Banho completo e brushing", 15, 7, 1);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(3, "Consulta de clínica geral", "Consulta de medicina veterinária geral",35, 25, 1);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(4, "Esterilização", "Esterilização", 150, 100, 1);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(5, "Análises Clínicas", "Análises clínicas básicas(Recolha de sangue, inspeção visual)", 30, 25, 1);
+#servicos clinica 2
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(0, "Desparasitação externa", "Banho e aplicação de uma ampôla desparasitante(pulgas e carraças)", 15, 10, 2);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(1, "Desparasitação interna", "Banho e vacinação contra pulgas e carraças", 25, 12, 2);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(2, "Banho e brushing", "Banho completo e brushing", 15, 7, 2);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(3, "Consulta de clínica geral", "Consulta de medicina veterinária geral",35, 25, 2);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(4, "Esterilização", "Esterilização", 150, 100, 2);
+insert into CaumPetClinic.Servico (idServico, tipoServico, descricao, valorBase, lucro, Clinica_idClinica)
+values(5, "Hotel", "Permanência no hotel com supervisionamento dos nossos profissionais e acompanhamento dos nossos profissionais", 20, 7, 2);
+
+
+#adicionar carrinhas às clinicas
+Select * from CaumPetClinic.Carrinha;
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("69-BB-96", 130422, False, 0);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("18-AO-20", 167152, False, 0);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("34-OZ-10", 139687, False, 0);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("AR-20-TI", 20123, False, 0);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("12-ZZ-99", 119396, False, 0);
+
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("27-OP-02", 168199, False, 1);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("78-PQ-21", 170486, False, 1);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("80-XZ-92", 228001, False, 1);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("12-ZZ-24", 155045, False, 1);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("AB-77-LA", 37191, False, 1);
+
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("AP-27-BN", 7704, False, 2);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("12-LL-21", 230379, False, 2);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("AN-12-PL", 18008, False, 2);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("22-18-QN", 198708, False, 2);
+insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, Clinica_idClinica)
+values("18-RE-19", 105721, False, 2);
+
+
 #Funcionario 0
-insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) values(3,"6578-440","Travessa  Estrela de Ouro","Sequeira","322","null");
+insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) 
+values(3,"6578-440","Travessa  Estrela de Ouro","Sequeira","322","null");
 insert into CaumPetClinic.Contacto (idContacto, telemovel, telefone, email)
 values("3", "934049192", null, "Domingas.Gomes141@yahoo.com");
 insert into CaumPetClinic.Funcionario (NIF, nome, dataDeNascimento, cargo, avaliacao, Clinica_idClinica, Morada_idMorada, Contacto_idContacto)
@@ -169,5 +250,46 @@ values("23", "957552823", null, "Domingos.Oliveira633@yahoo.com");
 insert into CaumPetClinic.Funcionario (NIF, nome, dataDeNascimento, cargo, avaliacao, Clinica_idClinica, Morada_idMorada, Contacto_idContacto)
 values("132125989", "Domingos Oliveira", DATE("1999-6-23"), "Estafeta", null, 2,23,23);
 
+#criar animais
+select * from CaumPetClinic.Boletim;
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (0, "Piruças", DATE("2010-06-20"), 40, "C.Lupus", "Golden Retriever", "Hepatite Canina,Raiva, Tosse de Canil", "Animal esterlizado a 2018-02-10");
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (1, "Lucas", DATE("2006-02-15"), 32, "C.Lupus", "Pastor Alemão", "Hepatite Canina,Raiva, Tosse de Canil, Esgana, Leptospirose", "Animal esterlizado a 2010-04-30, pata partida a 2020-05-14");
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (2, "Joaninha", DATE("2011-10-24"), 5, "C.Lupus", "Yorkshire Terrier", "", null);
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (3, "Cumba", DATE("2010-01-28"), 6, "C.Lupus", "Europeu Comum", "Calicivírus felino, FIV, FELV, Raiva", null);
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (4, "Budha", DATE("2014-10-13"), 7, "Felis Catus", "Europeu Comum", "", "Animal esterlizado a 2018-02-10");
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (5, "Jão", DATE("2018-06-12"), 20, "C.Lupus", "Europeu Comum", "Hepatite Canina,Raiva, Tosse de Canil", null);
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (6, "Princesa", DATE("2019-12-24"), 3, "Felis Catus", "Siamês", "", "Desparazitada a 2022-02-10, desparazitada a 2020-02-10");
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (7, "Simba", DATE("2016-03-08"), 5, "Felis Catus", "Persa", "", null);
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (8, "Flash", DATE("2018-06-20"), 4, "Cricetinae", "Hamster Chinês", null,null);
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (9, "Donatello", DATE("2010-06-20"), 1, "Testudines", "Tartaruga-ninja", null, null);
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (10, "Michelangelo", DATE("2010-06-20"), 1, "Testudines", "Tartaruga-ninja", null, null);
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (11, "Leonardo", DATE("2010-06-20"), 1, "Testudines", "Tartaruga-ninja", null, null);
+insert into CaumPetClinic.Boletim(idBoletim, nome, dataDeNascimento, peso, especie, raca, vacinas, historico) 
+values (12, "Raphael", DATE("2010-06-20"), 1, "Testudines", "Tartaruga-ninja", null, null);
 
-select * from CaumPetClinic.Funcionario where Morada_idMorada=4;
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(0,0);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(1,1);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(2,2);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(3,3);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(4,4);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(5,5);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(6,6);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(7,7);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(8,8);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(9,9);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(10,10);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(11,11);
+insert into CaumPetClinic.Animal (idAnimal, Boletim_idBoletim) values(12,12);
+

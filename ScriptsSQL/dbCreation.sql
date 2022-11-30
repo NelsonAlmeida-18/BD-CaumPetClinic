@@ -134,12 +134,13 @@ CREATE INDEX `fk_Funcionario_Contacto1_idx` ON `CaumPetClinic`.`Funcionario` (`C
 -- Table `CaumPetClinic`.`Servico`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CaumPetClinic`.`Servico` (
-  `tipoServico` INT NOT NULL,
-  `descricao` VARCHAR(45) NOT NULL,
+ `idServico` INT NOT NULL,
+  `tipoServico` VARCHAR(200) NOT NULL,
+  `descricao` VARCHAR(500) NOT NULL,
   `valorBase` INT NOT NULL,
-  `lucro` VARCHAR(45) NOT NULL,
+  `lucro` INT NOT NULL,
   `Clinica_idClinica` INT NOT NULL,
-  PRIMARY KEY (`tipoServico`, `Clinica_idClinica`),
+  PRIMARY KEY (`idServico`, `Clinica_idClinica`),
   CONSTRAINT `fk_Servico_Clinica1`
     FOREIGN KEY (`Clinica_idClinica`)
     REFERENCES `CaumPetClinic`.`Clinica` (`idClinica`)
@@ -147,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `CaumPetClinic`.`Servico` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX `tipoServico_UNIQUE` ON `CaumPetClinic`.`Servico` (`tipoServico` ASC) VISIBLE;
+CREATE UNIQUE INDEX `idServico_UNIQUE` ON `CaumPetClinic`.`Servico` (`idServico` ASC) VISIBLE;
 
 CREATE INDEX `fk_Servico_Clinica1_idx` ON `CaumPetClinic`.`Servico` (`Clinica_idClinica` ASC) VISIBLE;
 
@@ -192,8 +193,8 @@ CREATE TABLE IF NOT EXISTS `CaumPetClinic`.`Boletim` (
   `peso` INT NOT NULL,
   `especie` VARCHAR(45) NOT NULL,
   `raca` VARCHAR(45) NOT NULL,
-  `vacinas` VARCHAR(45) NOT NULL,
-  `historico` VARCHAR(45) NOT NULL,
+  `vacinas` VARCHAR(500) NULL,
+  `historico` VARCHAR(500) NULL,
   PRIMARY KEY (`idBoletim`))
 ENGINE = InnoDB;
 
@@ -313,22 +314,22 @@ CREATE INDEX `fk_Cliente_has_Animal_has_Pedido_Cliente_has_Animal1_idx` ON `Caum
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `CaumPetClinic`.`Pedido_has_Servico` (
   `Pedido_idPedido` INT NOT NULL,
-  `Servico_tipoServico` INT NOT NULL,
+  `Servico_idServico` INT NOT NULL,
   `Clinica_idClinica` INT NOT NULL,
-  PRIMARY KEY (`Pedido_idPedido`, `Servico_tipoServico`, `Clinica_idClinica`),
+  PRIMARY KEY (`Pedido_idPedido`, `Servico_idServico`, `Clinica_idClinica`),
   CONSTRAINT `fk_Pedido_has_Servico_Pedido1`
     FOREIGN KEY (`Pedido_idPedido`)
     REFERENCES `CaumPetClinic`.`Pedido` (`idPedido`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pedido_has_Servico_Servico1`
-    FOREIGN KEY (`Servico_tipoServico` , `Clinica_idClinica`)
-    REFERENCES `CaumPetClinic`.`Servico` (`tipoServico` , `Clinica_idClinica`)
+    FOREIGN KEY (`Servico_idServico` , `Clinica_idClinica`)
+    REFERENCES `CaumPetClinic`.`Servico` (`idServico` , `Clinica_idClinica`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_Pedido_has_Servico_Servico1_idx` ON `CaumPetClinic`.`Pedido_has_Servico` (`Servico_tipoServico` ASC, `Clinica_idClinica` ASC) VISIBLE;
+CREATE INDEX `fk_Pedido_has_Servico_Servico1_idx` ON `CaumPetClinic`.`Pedido_has_Servico` (`Servico_idServico` ASC, `Clinica_idClinica` ASC) VISIBLE;
 
 CREATE INDEX `fk_Pedido_has_Servico_Pedido1_idx` ON `CaumPetClinic`.`Pedido_has_Servico` (`Pedido_idPedido` ASC) VISIBLE;
 
