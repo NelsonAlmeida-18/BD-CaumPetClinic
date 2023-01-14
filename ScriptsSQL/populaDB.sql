@@ -431,9 +431,9 @@ values("134637184", "João Pereira Francisco", DATE("1974-7-4"), 40,57, 57);
 #Criar animais 
 select * from CaumPetClinic.Animal;
 insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(0, "Piruças", 40, DATE("2010-06-20"),  "C.Lupus", "Golden Retriever", "Vacinas: Hepatite Canina, Raiva, Tosse de Canil. Animal esterlizado a 2018-02-10.","134637184");
+values(0, "Piruças", 40, DATE("2010-06-20"), "C.Lupus", "Golden Retriever", "Vacinas: Hepatite Canina, Raiva, Tosse de Canil. Animal esterlizado a 2018-02-10.","134637184");
 insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(1, "Joaninha", 5, DATE("2011-10-24"),  "C.Lupus", "Yorkshire Terrier", "Vacinas: Hepatite Canina, Raiva, Tosse de Canil.","134637184");
+values(1, "Joaninha", 5, DATE("2011-10-24"), "C.Lupus", "Yorkshire Terrier", "Vacinas: Hepatite Canina, Raiva, Tosse de Canil.","134637184");
 insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
 values(2, "Lucas", 32, DATE("2006-02-15"), "C.Lupus", "Pastor Alemão", "Vacinas: Hepatite Canina,Raiva, Tosse de Canil, Esgana, Leptospirose. Animal esterlizado a 2010-04-30. Pata partida a 2020-05-14","82984838");
 insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
@@ -560,8 +560,10 @@ insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecol
 values(18, DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), 3, 20, 2, 0, "32556492", 0);
 
 insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(19, DATE("2022-12-06"), DATE("2022-12-06"), DATE("2022-12-07"), DATE("2022-12-07"), 5, 200, 0, 4, "182856385", 2);
+values(20, DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), 3, 20, 2, 0, "60535582", 0);
 
+insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
+values(19, DATE("2022-12-06"), DATE("2022-12-06"), DATE("2022-12-07"), DATE("2022-12-07"), 5, 200, 0, 4, "182856385", 2);
 
 
 
