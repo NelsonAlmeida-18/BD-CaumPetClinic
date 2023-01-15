@@ -35,6 +35,7 @@ GRANT ALL ON CaumPetClinic.* TO 'adminPR'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON  CaumPetClinic.* TO 'prog'@'localhost';
 GRANT CREATE ROUTINE ON CaumPetClinic.* TO 'prog'@'localhost';
 GRANT EXECUTE ON CaumPetClinic.* TO 'prog'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, LOCK TABLES, CREATE VIEW, SHOW VIEW, EXECUTE, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, TRIGGER, CREATE TABLESPACE, CREATE TEMPORARY TABLES, EVENT, PROCESS ON *.* TO 'prog'@'localhost';
 
 
 GRANT SELECT, INSERT, UPDATE ON  CaumPetClinic.* TO 'adminClinica'@'localhost';
@@ -46,7 +47,6 @@ GRANT EXECUTE ON PROCEDURE topClientesMensais TO 'adminClinica'@'localhost';
 GRANT EXECUTE ON PROCEDURE topAnimais TO 'adminPR'@'localhost';
 GRANT EXECUTE ON PROCEDURE topAnimais TO 'adminClinica'@'localhost';
 
-GRANT EXECUTE ON PROCEDURE topClientesMensais TO 'adminPR'@'localhost';
 GRANT EXECUTE ON PROCEDURE topClientesMensaisCadeia TO 'adminPR'@'localhost';
 
 GRANT EXECUTE ON FUNCTION criaCliente TO 'user'@'localhost';

@@ -503,69 +503,6 @@ values("18-RE-19", 105721, False, "Provável fuga de combustivel", null);
 
 select * from CaumPetClinic.pedido;
 #Pedido por concluir 1
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(0, DATE("2022-12-29"), null, DATE("2023-1-3"), null, null, 20,1 ,2,"172304089" ,1);
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(1, DATE("2022-12-12"), DATE("2022-12-12"), DATE("2022-12-17"), DATE("2022-12-17"), 5, 130, 0, 6, "219159294", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(2, DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), 4, 30, 2, 2, "19115371", 1);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(3, DATE("2022-12-05"), DATE("2022-12-05"), DATE("2022-12-05"), DATE("2022-12-05"), 5, 48, 16, 3, "53190183", 2);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(4, DATE("2022-12-20"), DATE("2022-12-20"), DATE("2022-12-21"), DATE("2022-12-22"), 5, 35, 14, 0, "46894403", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(5, DATE("2022-12-18"), DATE("2022-12-18"), DATE("2022-12-18"), DATE("2022-12-18"), 5, 45, 11, 3, "239267072", 1);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(6, DATE("2022-12-11"), DATE("2022-12-11"), DATE("2022-12-12"), DATE("2022-12-12"), 4, 45, 15, 5, "177580819", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(7, DATE("2022-12-15"), DATE("2022-12-15"), DATE("2022-12-22"), DATE("2022-12-22"), 5, 175, 7, 6, "46894403", 2);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(8, DATE("2022-12-13"), DATE("2022-12-13"), DATE("2022-12-13"), DATE("2022-12-13"), 3, 165, 6, 4, "51126379", 1);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(9, DATE("2022-12-17"), DATE("2022-12-17"), DATE("2022-12-20"), DATE("2022-12-20"), 5, 75, 10, 6, "177580819", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(10, DATE("2022-12-17"), DATE("2022-12-17"), DATE("2022-12-20"), DATE("2022-12-20"), 5, 75, 12, 6, "177580819", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(11, DATE("2022-12-11"), DATE("2022-12-11"), DATE("2022-12-11"), DATE("2022-12-11"), 4, 30, 1, 0, "182856385", 1);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(12, DATE("2022-12-21"), DATE("2022-12-21"), DATE("2022-12-21"), DATE("2022-12-21"), 2, 50, 16, 0, "59849550", 2);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(13, DATE("2022-12-21"), DATE("2022-12-21"), DATE("2022-12-21"), DATE("2022-12-21"), 5, 20, 13, 2, "239267072", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(14, DATE("2022-12-28"), DATE("2022-12-28"), DATE("2022-12-30"), DATE("2022-12-30"), 4, 155, 4, 4, "60535582", 1);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(15, DATE("2022-12-27"), DATE("2022-12-27"), DATE("2022-12-27"), DATE("2022-12-27"), 3, 40, 11, 3, "177580819", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(16, DATE("2022-12-15"), DATE("2022-12-15"), DATE("2022-12-15"), DATE("2022-12-15"), 4, 25, 3, 1, "32556492", 2);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(17, DATE("2022-12-03"), DATE("2022-12-03"), DATE("2022-12-05"), DATE("2022-12-05"), 5, 35, 1, 6, "32556492", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(18, DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), 3, 20, 2, 0, "32556492", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(20, DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), DATE("2022-12-01"), 3, 20, 2, 0, "60535582", 0);
-
-insert into CaumPetClinic.Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
-values(19, DATE("2022-12-06"), DATE("2022-12-06"), DATE("2022-12-07"), DATE("2022-12-07"), 5, 200, 0, 4, "182856385", 2);
-
-
 
 
 

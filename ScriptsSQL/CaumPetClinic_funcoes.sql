@@ -4,7 +4,7 @@ USE CaumPetClinic;
 -- Implementação de um jornal de eventos para o sistema.
 -- Tabela que acolhe o registo de eventos ocorridos no sistema.
 
-Drop table logs;
+Drop table if exists logs;
 CREATE TABLE IF NOT EXISTS Logs (
 	Número INT NOT NULL AUTO_INCREMENT,
     Sucesso INT NOT NULL DEFAULT 0,
@@ -43,9 +43,6 @@ criaPedido:BEGIN
     DECLARE CONTINUE HANDLER 
         FOR SQLEXCEPTION 
             SET vErro = 1;    
-		
-        
-        
         
         -- verificar se o servico existe
         select count(Servico.idServico) into vErro from Servico where Servico.idServico=IdServico;
@@ -115,6 +112,7 @@ criaPedido:BEGIN
         end if;
         
         select max(idPedido)+1 into v_idPedido from Pedido;
+        if v_idPedido is null then set v_idPedido = 0; end if;
         
         SELECT funcionarioOcioso(0, dataRecolha) into v_NIFFuncionario;
         
@@ -128,14 +126,17 @@ criaPedido:BEGIN
         set v_valorBase = ROUND(v_valorBase+v_valorBase*0.23,2);
         
         
+        
 		insert into Pedido(idPedido, dataEstimadaRecolha, dataEfetivaRecolha, dataEstimadaEntrega, dataEfetivaEntrega, avaliacao, custoFinal, Animal_idAnimal, Servico_idServico, Funcionario_NIF, Clinica_idClinica)
         values(v_idPedido,dataRecolha, null, dataEntrega,null,0,v_valorBase, IdAnimal, IdServico, v_NIFFuncionario, IdClinica);
 	
 		select sum(Cliente.Pontos) into vPontos where Cliente.NIF=NIFCliente;
+        if vPontos is null then set vPontos = 0; end if;
         set vPontos = vPontos+v_valorBase*0.5;
         update Cliente set Pontos=vPontos where Cliente.NIF = NIFCliente;
         
-	
+		select v_idPedido, dataRecolha, dataEntrega, v_valorBase, IdAnimal, IdServico, v_NIFFuncionario, IdClinica, vPontos;
+    
 		insert into logs(Sucesso,Descrição) values(1, Concat("Transação concluida, pedido inserido na base de dados e atribuido a um funcionario: ", v_NIFFuncionario, 
 						"\nData estimada de recolha: ", dataRecolha, "\nData Estimada de Entrega",dataEntrega, "\nNIF Cliente:", 
                         NIFCliente, "\nAnimal em causa: ",IdAnimal,
@@ -153,10 +154,13 @@ call criaPedido(
     0,
     0,
     0,
-    DATE("2023-2-2"),
-    DATE("2023-2-17")
+    DATE("2023-2-3"),
+    DATE("2023-2-10")
     );
-    
+
+select * from pedido;
+select * from logs;
+
 -- função que permite aos clientes registar que os seus animais foram recolhidos com sucesso
 
 drop function if exists registaRecolha;
@@ -219,6 +223,9 @@ create function registaEntrega(idPedido INT, avaliacao INT)
 $$
 
 select registaEntrega(0,5) as valor;        
+select * from pedido;
+select * from funcionario;
+select * from logs;
 
 drop function if exists funcionarioOcioso;
 delimiter $$
