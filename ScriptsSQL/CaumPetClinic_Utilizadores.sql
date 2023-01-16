@@ -24,8 +24,6 @@ SET PASSWORD FOR 'estafeta'@'localhost' = 'passwordGenerica123';
 CREATE USER 'user'@'localhost';
 SET PASSWORD FOR 'user'@'localhost' = 'user1234';
 
-
-
 -- Permissão de acesso a todos os objectos da base de dados em 'localhost'.
 GRANT ALL ON CaumPetClinic.* TO 'adminPR'@'localhost';
 
@@ -56,6 +54,7 @@ GRANT EXECUTE ON FUNCTION registaEntrega TO 'user'@'localhost';
 GRANT EXECUTE ON FUNCTION registaRecolha TO 'user'@'localhost';
 
 
-
-
-
+show databases;
+show grants for "prog"@"localhost";
+SELECT user, host, plugin FROM mysql.user;
+ALTER USER 'prog'@'localhost' IDENTIFIED WITH mysql_native_password BY 'prog1234';
