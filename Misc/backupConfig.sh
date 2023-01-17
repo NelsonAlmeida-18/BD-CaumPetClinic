@@ -27,6 +27,18 @@ fi
 
 read -p "Qual o número de backups diários que pretende realizar: " numBackups
 
+
+read -p "Qual o horario dos backups semanais (HH:MM) : " timestamp
+
+IFS=':'
+read -a strarr <<< "$timestamp"
+
+
+(echo "${strarr[1]} ${strarr[0]} * * *  sh /Users/rkeat/Desktop/Universidade/3ano1semestre/BD-CaumPetClinic/Misc/totalBackup.sh $username $password  /Users/rkeat/Desktop/Universidade/3ano1semestre/BD-CaumPetClinic/Misc/backups" ; crontab -l) | crontab -
+echo "Novo backup agendado para todos as semanas às ${strarr[0]}:${strarr[1]}"
+
+
+
 for i in $(seq 1 $numBackups); do
 
     read -p "Qual o horario dos backups (HH:MM) : " timestamp
@@ -35,6 +47,6 @@ for i in $(seq 1 $numBackups); do
 	read -a strarr <<< "$timestamp"
 
 
-	(echo "${strarr[1]} ${strarr[0]} * * *  sh /Users/rkeat/Desktop/Universidade/3ano1semestre/BD-CaumPetClinic/Misc/backupScheduler.sh $username $password  /Users/rkeat/Desktop/Universidade/3ano1semestre/BD-CaumPetClinic/Misc/backups" ; crontab -l) | crontab -
+	(echo "${strarr[1]} ${strarr[0]} * * *  sh /Users/rkeat/Desktop/Universidade/3ano1semestre/BD-CaumPetClinic/Misc/partialBackup.sh $username $password  /Users/rkeat/Desktop/Universidade/3ano1semestre/BD-CaumPetClinic/Misc/backups" ; crontab -l) | crontab -
 	echo "Novo backup agendado para todos os dias às ${strarr[0]}:${strarr[1]}"
 done

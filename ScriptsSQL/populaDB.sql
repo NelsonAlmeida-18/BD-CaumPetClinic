@@ -378,94 +378,6 @@ values("50", "Domingas.Sousa@outlook.pt", "966286629", null);
 insert into CaumPetClinic.Funcionario (NIF, nome, dataDeNascimento, cargo, avaliacao,Morada_idMorada, Contacto_idContacto, Clinica_idClinica)
 values("58510244", "Domingas Sousa", DATE("1972-8-16"), "Assistente médico", 1, 50, 50, 2);
 
-
-#Cliente 0
-insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) values(51,"7973-786","Rua da Estrela de Ouro","Argoncilhe","829","0F");
-insert into CaumPetClinic.Contacto (idContacto, email, telemovel, telefone)
-values("51", "Maria.Nunes773@outlook.pt", "927366513", null);
-insert into CaumPetClinic.Cliente (NIF, nome, dataDeNascimento,pontos,Morada_idMorada, Contacto_idContacto)
-values("47556494", "Maria Martins Francisco Nunes", DATE("2000-2-29"), 55,51, 51);
-
-#Cliente 1
-insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) values(52,"5551-988","Travessa  Santa Casa da Misericórdia","Pego","986","null");
-insert into CaumPetClinic.Contacto (idContacto, email, telemovel, telefone)
-values("52", "Isabel.Santos@outlook.com", "963722968", null);
-insert into CaumPetClinic.Cliente (NIF, nome, dataDeNascimento,pontos,Morada_idMorada, Contacto_idContacto)
-values("231316574", "Isabel Santos", DATE("1993-4-25"), 48,52, 52);
-
-#Cliente 2
-insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) values(53,"0110-866","Travessa do Santa Casa da Misericórdia","Eirado","955","4F");
-insert into CaumPetClinic.Contacto (idContacto, email, telemovel, telefone)
-values("53", "Margarida.Mendes@yahoo.pt", "959945576", null);
-insert into CaumPetClinic.Cliente (NIF, nome, dataDeNascimento,pontos,Morada_idMorada, Contacto_idContacto)
-values("57696219", "Margarida Gomes Gomes Mendes", DATE("1998-7-25"), 12,53, 53);
-
-#Cliente 3
-insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) values(54,"4204-510","Travessa do São Vicente de Fora","Moimenta","759","null");
-insert into CaumPetClinic.Contacto (idContacto, email, telemovel, telefone)
-values("54", "Miguel.Francisco@hotmail.com", "961284378", null);
-insert into CaumPetClinic.Cliente (NIF, nome, dataDeNascimento,pontos,Morada_idMorada, Contacto_idContacto)
-values("63500289", "Miguel Francisco", DATE("1974-2-17"), 96,54, 54);
-
-#Cliente 4
-insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) values(55,"5782-201","Travessa de Almirante Lopes","Bemposta","56","null");
-insert into CaumPetClinic.Contacto (idContacto, email, telemovel, telefone)
-values("55", "Manuel.Almeida@outlook.com", "937087277", null);
-insert into CaumPetClinic.Cliente (NIF, nome, dataDeNascimento,pontos,Morada_idMorada, Contacto_idContacto)
-values("24664643", "Manuel Silva Ribeiro Almeida", DATE("1986-2-24"), 33,55, 55);
-
-#Cliente 5
-insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) values(56,"9886-995","Travessa da Bela Vista","Fornos","354","null");
-insert into CaumPetClinic.Contacto (idContacto, email, telemovel, telefone)
-values("56", "Benedita.Santos@gmail.com", "969222570", null);
-insert into CaumPetClinic.Cliente (NIF, nome, dataDeNascimento,pontos,Morada_idMorada, Contacto_idContacto)
-values("82984838", "Benedita Ferreira Santos", DATE("1995-11-8"), 31,56, 56);
-
-#Cliente 6
-insert into CaumPetClinic.Morada (idMorada, codPostal, rua, localidade, porta, piso) values(57,"8850-111","Travessa  Vilar do Paraíso","Fiães","923","5E");
-insert into CaumPetClinic.Contacto (idContacto, email, telemovel, telefone)
-values("57", "João.Francisco@hotmail.com", "923586276", null);
-insert into CaumPetClinic.Cliente (NIF, nome, dataDeNascimento,pontos,Morada_idMorada, Contacto_idContacto)
-values("134637184", "João Pereira Francisco", DATE("1974-7-4"), 40,57, 57);
-
-#Criar animais 
-select * from CaumPetClinic.Animal;
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(0, "Piruças", 40, DATE("2010-06-20"), "C.Lupus", "Golden Retriever", "Vacinas: Hepatite Canina, Raiva, Tosse de Canil. Animal esterlizado a 2018-02-10.","134637184");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(1, "Joaninha", 5, DATE("2011-10-24"), "C.Lupus", "Yorkshire Terrier", "Vacinas: Hepatite Canina, Raiva, Tosse de Canil.","134637184");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(2, "Lucas", 32, DATE("2006-02-15"), "C.Lupus", "Pastor Alemão", "Vacinas: Hepatite Canina,Raiva, Tosse de Canil, Esgana, Leptospirose. Animal esterlizado a 2010-04-30. Pata partida a 2020-05-14","82984838");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(3, "Cumba", 6, DATE("2010-01-28"), "C.Lupus", "Europeu Comum", "Vacinas: Calicivírus felino, FIV, FELV, Raiva", "63500289");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(4, "Budha", 7, DATE("2014-10-13"), "Felis Catus", "Europeu Comum", "Animal esterlizado a 2018-02-10", "63500289");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(5, "Jão", 20, DATE("2018-06-12"), "C.Lupus", "Europeu Comum", "Vacinas: Hepatite Canina,Raiva, Tosse de Canil", "57696219");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(6, "Princesa", 3, DATE("2019-12-24"), "Felis Catus", "Siamês", "Desparazitada a 2022-02-10", "57696219");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(7, "Simba", 5, DATE("2016-03-08"), "Felis Catus", "Persa", "", "231316574");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(8, "Flash", 4, DATE("2018-06-20"), "Cricetinae", "Hamster Chinês", "Desparazitada a 2020-08-12", "231316574");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(9, "Donatello", 1, DATE("2010-06-20"), "Testudines", "Tartaruga-ninja", "Consultas em dia", "24664643");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(10, "Michelangelo", 1, DATE("2010-06-20"), "Testudines", "Tartaruga-ninja", "Consultas em dia", "24664643");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF) 
-values(11, "Leonardo", 1, DATE("2010-06-20"), "Testudines", "Tartaruga-ninja", "Consultas em dia", "24664643");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(12, "Raphael", 1, DATE("2010-06-20"), "Testudines", "Tartaruga-ninja", "Consultas em dia", "24664643");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(13, "Splinter", 1, DATE("2010-10-24"), "Cricetinae", "Hamster Chinês", "Consultas em dia", "24664643");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(14, "Bolota", 4, DATE("2022-12-25"), "C.Lupus", "Yorkshire Terrier", "Vacinas: Tosse de Canil","47556494");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(15, "Rolha", 15, DATE("2010-10-18"), "C.Lupus", "Europeu Comum", "Consultas em dia","47556494");
-insert into CaumPetClinic.Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF)
-values(16, "Barreto", 6, DATE("2022-12-25"), "C.Lupus", "Pastor Alemao", "", "47556494");
-
-
 #Carrinhas
 Select * from CaumPetClinic.Carrinha;
 insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, anotacoes, Funcionario_NIF)
@@ -501,9 +413,6 @@ values("22-18-QN", 198708, False, "", null);
 insert into CaumPetClinic.Carrinha(matricula, kmsNaUltimaUtil, emUso, anotacoes, Funcionario_NIF)
 values("18-RE-19", 105721, False, "Provável fuga de combustivel", null);
 
-select * from CaumPetClinic.pedido;
-#Pedido por concluir 1
 
 
-
-
+#### criar clientes e animais
