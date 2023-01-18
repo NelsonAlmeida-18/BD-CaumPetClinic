@@ -1,3 +1,5 @@
+use caumpetclinic;
+
 #criar clinicas
 insert into CaumPetClinic.Morada (idMorada,codPostal, rua, localidade, porta, piso)
 values(0,"4710-167", "Rua Soldado Manuel Pinheiro", "Adaúfe", "7", null);
@@ -415,4 +417,31 @@ values("18-RE-19", 105721, False, "Provável fuga de combustivel", null);
 
 
 
-#### criar clientes e animais
+select criaCliente(647451205, "Nuno Costa", DATE("2002-08-23"), 4820-123, "Rua das Bananeiras", "Fafe", 62, 0, "nuno23@gmail.com", 962323233, null);
+select criaCliente(425366944, "Nelson Almeida", DATE("2002-03-30"), 4805-111, "Rua das Pessegos", "Taipas", 17, 0, "nelson30@gmail.com", 912764589, null);
+select criaCliente(773409851, "Sara Fontes", DATE("2001-09-07"), 4000-784, "Urbanização dos Astros", "Braga", 654, 5, "sara7f@gmail.com", 912171897, 253707169);
+select criaCliente(475564914, "Hugo Costa", DATE("2002-01-28"), 4761-987, "Rua dos Carneiros", "tadim", 75, 2, "hugo9c@gmail.com", 935987612, 250172839);
+select criaCliente(649851205, "António Castro", DATE("1977-03-29"), 4000-553, "Urbanização dos Bombeiros", "Braga", 61, 8, "tony_das_camionetas@turismo.pt", 957588463, null);
+select criaCliente(877612205, "Jorge Mendes", DATE("1980-12-04"), 4650-200, "Rua das Empadas", "Guimarães", 96, 1, "sergio_calado@gmail.com", 917651523, 258455550);
+select criaCliente(985455512, "Sergio Calado", DATE("1981-11-13"), 4820-440, "Rua das Avestruzes", "Fafe", 123, 4, "serginho123pt@sapo.pt", 931234561, null);
+
+select criaAnimal("Joaninha", 5, DATE("2011-10-24"), "C.Lupus", "Yorkshire Terrier", "Vacinas: Hepatite Canina, Raiva, Tosse de Canil.", 647451205);
+select criaAnimal("Donatello", 1, DATE("2010-06-20"), "Testudines", "Tartaruga-ninja", "Consultas em dia", 425366944);
+select criaAnimal("Michelangelo", 1, DATE("2010-06-20"), "Testudines", "Tartaruga-ninja", "Consultas em dia", 425366944);
+select criaAnimal("Leonardo", 1, DATE("2010-06-20"), "Testudines", "Tartaruga-ninja", "Consultas em dia", 425366944);
+select criaAnimal("Raphael", 1, DATE("2010-06-20"), "Testudines", "Tartaruga-ninja", "Consultas em dia", 425366944);
+select criaAnimal("Budha", 7, DATE("2014-10-13"), "Felis Catus", "Europeu Comum", "Animal esterlizado a 2018-02-10", 773409851);
+select criaAnimal("Simba", 5, DATE("2016-03-08"), "Felis Catus", "Persa", "", 475564914);
+select criaAnimal("Bolota", 4, DATE("2022-12-25"), "C.Lupus", "Yorkshire Terrier", "Vacinas: Tosse de Canil", 985455512);
+select criaAnimal("Flash", 50, DATE("2018-06-20"), "C.Lupus", "Golden Retriever", "Desparazitada a 2020-08-12", 877612205);
+select criaAnimal("Naruto", 12, DATE("2022-12-24"), "C. Lupus", "Europeu Comum", "",647451205);
+
+
+call criaPedido(425366944, 3, 1, 1, DATE("2023-01-17"), DATE("2023-01-18"));
+call criaPedido(647451205, 9, 2, 0, DATE("2023-01-17"), DATE("2023-02-19"));
+call criaPedido(425366944, 1, 1, 1, DATE("2023-01-17"), DATE("2023-01-18"));
+call criaPedido(773409851, 5, 6, 1, DATE("2023-01-15"), DATE("2023-01-19"));
+call criaPedido(475564914, 6, 3, 2, DATE("2023-01-17"), DATE("2023-01-22"));
+call criaPedido(985455512, 7, 4, 0, DATE("2023-02-16"), DATE("2023-02-23"));
+
+

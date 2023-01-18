@@ -1,10 +1,22 @@
 -- RE01 - O sistema deve apresentar o número de pedidos realizados nesse dia.
-select count(Pedido.idPedido) as numPedidos, Pedido.dataEfetivaRecolha
+select count(Pedido.idPedido) as numPedidos, Pedido.dataEfetivaRecolha, Animal.nome
 from Pedido
-where Pedido.dataEfetivaRecolha = DATE('2022-12-12')
+inner join Animal
+on Pedido.Animal_idAnimal=Animal.idAnimal
+where Pedido.dataEfetivaRecolha = DATE('2023-01-18')
 group by Pedido.dataEfetivaRecolha
 order by numPedidos DESC;
 
+select * from servico;
+
+Delimiter $$
+create procedure atualizaValorBase(IN novoValor INT, IN v_idServico INT)
+begin
+	update Servico set valorBase=novoValor where idServico=v_idServico;
+end
+$$
+
+call atualizaValorBase(5, 0);
 
 -- RE02 - Deverá ser possível efetuar um registo dos clientes de cada clínica, para um determinado mês.
 Delimiter $$

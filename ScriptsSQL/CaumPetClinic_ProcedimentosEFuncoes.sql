@@ -134,8 +134,6 @@ criaPedido:BEGIN
         if vPontos is null then set vPontos = 0; end if;
         set vPontos = vPontos+v_valorBase*0.5;
         update Cliente set Pontos=vPontos where Cliente.NIF = NIFCliente;
-        
-		select v_idPedido, dataRecolha, dataEntrega, v_valorBase, IdAnimal, IdServico, v_NIFFuncionario, IdClinica, vPontos;
     
 		insert into logs(Sucesso,Descrição) values(1, Concat("Transação concluida, pedido inserido na base de dados e atribuido a um funcionario: ", v_NIFFuncionario, 
 						"\nData estimada de recolha: ", dataRecolha, "\nData Estimada de Entrega",dataEntrega, "\nNIF Cliente:", 
@@ -147,19 +145,6 @@ criaPedido:BEGIN
 		leave criaPedido;
     -- finaliza a transação
 END$$
-
-
-call criaPedido(
-    134637184,
-    0,
-    0,
-    0,
-    DATE("2023-2-3"),
-    DATE("2023-2-10")
-    );
-
-select * from pedido;
-select * from logs;
 
 -- função que permite aos clientes registar que os seus animais foram recolhidos com sucesso
 
@@ -184,7 +169,6 @@ create function registaRecolha(idPedido INT)
 
 $$
 
-select registaRecolha(0) as erro;
     
 -- função que permite aos clientes registar que os seus animais foram entregues e atribuir uma avaliação ao serviço prestado
 
@@ -337,7 +321,7 @@ create function criaCliente(NIF INT, nome VARCHAR(200), dataDeNascimento DATE, c
 $$
 
 -- função que permite ao utilizador associar o seu animal à empresa do Doutor Paulo Rocha
-
+drop function criaAnimal;
 Delimiter $$
 create function criaAnimal(nome varchar(100), peso FLOAT, dataDeNascimento DATE, especie VARCHAR(100), raca varChar(100), historico varchar(200), NIFDONO INT)
 	returns int
@@ -349,12 +333,17 @@ create function criaAnimal(nome varchar(100), peso FLOAT, dataDeNascimento DATE,
         declare vErro INT;
         
         select max(Animal.idAnimal)+1 into vIdAnimal from Animal;
+        if vIdAnimal is null then set vIdAnimal=0; end if;
         
-        insert into Animal(idAnimal, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF) values (vIdAnimal,peso, dataDeNascimento, especie, raca, historico, NIFDONO);
+		insert into Animal(idAnimal, nome, peso, dataDeNascimento, especie, raca, historico, Cliente_NIF) 
+        values (vIdAnimal,nome, peso, dataDeNascimento, especie, raca, historico, NIFDONO);
         
-		insert into logs(Sucesso,Descrição) values(1,Concat("Operação bem sucedida: ", "Animal associado ao cliente\nCom o NIF: ", NIF, "\nIdentificado pelo número: ",vIdAnimal));
+		insert into logs(Sucesso,Descrição) values(1,Concat("Operação bem sucedida: ", "Animal associado ao cliente\nCom o NIF: ", NIFDONO, "\nIdentificado pelo número: ",vIdAnimal));
         
+
         return 1;
     end
 $$
+
+
 

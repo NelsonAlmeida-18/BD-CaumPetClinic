@@ -11,13 +11,10 @@ filename="$3/TOTALDUMP_$database-$(date +\%Y\%m\%d_\%H\%M).sql"
 
 
 read -p "Executing this file will delete all files in the directory: $3 and it will make a total dump of the CaumPetClinicDatabase[y/n]" resp
-echo resp
-if [ resp -eq "y"] then
+if [ $resp=="y" ]; then
+  rm $3/*
   mysqldump --user=$1 --password=$2 --host="localhost" $database > $filename
-  rm $3/PARTIALDUMP_*
   echo "Successful backup at $(date +%Y%m%d_%H:%M) "
-
+else
+  echo "Operação Abortada"
 fi
-  echo "Operação abortada!"
-
-

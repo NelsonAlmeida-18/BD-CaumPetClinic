@@ -53,8 +53,3 @@ GRANT EXECUTE ON PROCEDURE criaPedido TO 'user'@'localhost';
 GRANT EXECUTE ON FUNCTION registaEntrega TO 'user'@'localhost';
 GRANT EXECUTE ON FUNCTION registaRecolha TO 'user'@'localhost';
 
-
-show databases;
-show grants for "prog"@"localhost";
-SELECT user, host, plugin FROM mysql.user;
-ALTER USER 'prog'@'localhost' IDENTIFIED WITH mysql_native_password BY 'prog1234';

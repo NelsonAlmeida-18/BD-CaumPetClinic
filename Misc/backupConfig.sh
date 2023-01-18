@@ -46,6 +46,8 @@ for i in $(seq 1 $numBackups); do
 	IFS=':'
 	read -a strarr <<< "$timestamp"
 
+    at $timestamp -f /path/to/script.sh 
+
 
 	(echo "${strarr[1]} ${strarr[0]} * * *  sh /Users/rkeat/Desktop/Universidade/3ano1semestre/BD-CaumPetClinic/Misc/partialBackup.sh $username $password  /Users/rkeat/Desktop/Universidade/3ano1semestre/BD-CaumPetClinic/Misc/backups" ; crontab -l) | crontab -
 	echo "Novo backup agendado para todos os dias às ${strarr[0]}:${strarr[1]}"
